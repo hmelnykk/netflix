@@ -10,6 +10,7 @@ import { TrendingNow } from './components/TrendingNow';
 import { SecondaryLayout } from './components/layouts/SecondaryLayout';
 import { SignUpForm } from './components/SignUpForm';
 import { MoreReasonsToJoin } from './components/MoreReasonsToJoin';
+import { FAQ } from './components/FAQ';
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,7 @@ const router = createBrowserRouter([
     element: <Root>
       <TrendingNow />
       <MoreReasonsToJoin />
+      <FAQ />
     </Root>,
     errorElement: <Root>
       <PageNotFound />
