@@ -1,4 +1,3 @@
-import { Outlet } from "react-router";
 import MainLayout from "./components/layouts/MainLayout/MainLayout";
 import React, { ReactNode } from 'react';
 

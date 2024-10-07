@@ -6,12 +6,17 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Root from './root';
 import { Hero } from './components/Hero';
 import { PageNotFound } from './components/PageNotFound';
+import { TrendingNow } from './components/TrendingNow';
+import { SecondaryLayout } from './components/layouts/SecondaryLayout';
+import { SignUpForm } from './components/SignUpForm';
+import { MoreReasonsToJoin } from './components/MoreReasonsToJoin';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <Root>
-      <Hero />
+      <TrendingNow />
+      <MoreReasonsToJoin />
     </Root>,
     errorElement: <Root>
       <PageNotFound />
@@ -19,12 +24,27 @@ const router = createBrowserRouter([
   },
   {
     path: '/sign-up',
+    element: <SecondaryLayout>
+      <SignUpForm />
+    </SecondaryLayout>,
+    errorElement: <Root>
+      <PageNotFound />
+    </Root>,
+  },
+  {
+    path: '/films',
     element: <Root>
       text
     </Root>,
     errorElement: <Root>
       <PageNotFound />
     </Root>,
+    children: [
+      {
+        path: '/films/:filmId',
+        element: <></>,
+      }
+    ]
   },
   {
     path: '/test',
