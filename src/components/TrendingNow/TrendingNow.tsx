@@ -1,10 +1,21 @@
 import { useEffect, useState } from "react";
 import { FilmCard } from "../FilmCard";
 
+interface FilmTemplate {
+        id: string,
+        name: string,
+        description: string,
+        category: string,
+        tags: string[],
+        globalRating: number,
+        countryRating: object[],
+        poster: string
+}
+
 const TrendingNow = () => {
     const [countryFilter, setCountryFilter] = useState<string>('ukraine');
     const [categoryFilter, setCategoryFilter] = useState<string>('movies');
-    const [films, setFilms] = useState<object[]>([{}]);
+    const [films, setFilms] = useState<FilmTemplate[]>([]);
 
     useEffect(() => {
         fetch(`${process.env.REACT_APP_BASE_URL}/films`)
@@ -43,8 +54,8 @@ const TrendingNow = () => {
                 </div>
                 <div className="films flex gap-4">
                     {
-                        films.map((film) => {
-                            return <FilmCard />
+                        films.map((film: FilmTemplate) => {
+                            return <FilmCard film={film} />
                         })
                     }
                 </div>

@@ -11,6 +11,7 @@ import { SecondaryLayout } from './components/layouts/SecondaryLayout';
 import { SignUpForm } from './components/SignUpForm';
 import { MoreReasonsToJoin } from './components/MoreReasonsToJoin';
 import { FAQ } from './components/FAQ';
+import { ModalWindow } from './components/ModalWindow';
 
 const router = createBrowserRouter([
   {
@@ -56,9 +57,12 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <Provider store={store}>
-      <RouterProvider router={router}/>
-    </Provider>
+    <div>
+      <div id='app'></div>
+      <Provider store={store}>
+        <RouterProvider router={router} />
+      </Provider>
+    </div>
   );
 }
 
