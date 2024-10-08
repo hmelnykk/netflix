@@ -1,16 +1,7 @@
 import { useEffect, useState } from "react";
 import { FilmCard } from "../FilmCard";
-
-interface FilmTemplate {
-        id: string,
-        name: string,
-        description: string,
-        category: string,
-        tags: string[],
-        globalRating: number,
-        countryRating: object[],
-        poster: string
-}
+import { FilmTemplate } from "../types";
+import filmsService from "../../services/films.service";
 
 const TrendingNow = () => {
     const [countryFilter, setCountryFilter] = useState<string>('ukraine');
@@ -18,11 +9,10 @@ const TrendingNow = () => {
     const [films, setFilms] = useState<FilmTemplate[]>([]);
 
     useEffect(() => {
-        fetch(`${process.env.REACT_APP_BASE_URL}/films`)
-            .then (response => response.json())
-            .then (json => setFilms(json))
-            .catch (error => console.log('unable to connect to db'))
-    }, [process.env.REACT_APP_BASE_URL])
+        filmsService.getFilms({})
+            .then(data => setFilms(data.data))
+
+    }, [films?.length])
 
     return (
         <div className="flex justify-center p-8">

@@ -7,6 +7,7 @@ import { SecondaryLayout } from './components/layouts/SecondaryLayout';
 import { PageNotFound } from './components/PageNotFound';
 import { SignUpForm } from './components/SignUpForm';
 import React from 'react';
+import { TestComponent } from './components/TestComponent';
 
 export const router = createBrowserRouter([
     {
@@ -46,6 +47,6 @@ export const router = createBrowserRouter([
     },
     {
       path: '/test',
-      element: <>another test text</>
+      element: <TestComponent />
     },
   ]);
