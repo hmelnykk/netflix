@@ -1,31 +1,3 @@
-interface FilmTemplate {
-    id: string,
-    name: string,
-    description: string,
-    category: string,
-    tags: string[],
-    globalRating: number,
-    countryRating: object[],
-    poster: string
-}
-
-const initialFilm: FilmTemplate = {
-    id: "0",
-    name: "a",
-    description: 'abc',
-    category: 'a',
-    tags: [
-        "0+", 'adventure',
-    ],
-    globalRating: 2,
-    countryRating: [
-        {
-            'ukraine': 3,
-        },
-    ],
-    poster: 'poster'
-}
-
 const ModalWindow = ({ film, onClose, isOpen }: { film: any, onClose: React.Dispatch<React.SetStateAction<boolean>>, isOpen: boolean }) => {
     const filmObject = film;
     const filmTags = filmObject.tags;

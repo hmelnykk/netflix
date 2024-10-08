@@ -1,9 +1,5 @@
-import { ReactNode } from "react";
+import { HeaderProps } from "../../../../types";
 import { LanguageSelect } from "../LanguageSelect";
-
-interface HeaderProps {
-    children? : ReactNode
-}
 
 const Header = ({children} : HeaderProps) => {
     return (

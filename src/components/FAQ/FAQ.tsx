@@ -1,23 +1,5 @@
 import { useState } from "react";
-
-const questionsList = [
-    {
-        id: 1,
-        question: 'What is Netflix?',
-        answer: "Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries, and more on thousands of internet-connected devices. You can watch as much as you want, whenever you want without a single commercial – all for one low monthly price. There's always something new to discover and new TV shows and movies are added every week!",
-    },
-    {
-        id: 2,
-        question: 'How much does Netflix cost?',
-        answer: "Watch Netflix on your smartphone, tablet, Smart TV, laptop, or streaming device, all for one fixed monthly fee. Plans range from EUR 4.99 to EUR 9.99 a month. No extra costs, no contracts."
-    },
-    {
-        id: 3,
-        question: 'Where can I watch?',
-        answer: "Watch anywhere, anytime. Sign in with your Netflix account to watch instantly on the web at netflix.com from your personal computer or on any internet-connected device that offers the Netflix app, including smart TVs, smartphones, tablets, streaming media players and game consoles. You can also download your favorite shows with the iOS or Android app. Use downloads to watch while you're on the go and without an internet connection. Take Netflix with you anywhere."
-    },
-
-]
+import { questionsList } from "../initial";
 
 const FAQ = () => {
     const [activeQuestion, setActiveQuestion] = useState(0);
