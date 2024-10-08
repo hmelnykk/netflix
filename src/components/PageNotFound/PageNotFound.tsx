@@ -1,9 +1,9 @@
 const PageNotFound = () => {
     return (
-        <div className="text-white h-[800px] flex justify-center items-center">
+        <div className="h-[800px] flex justify-center items-center">
             <div className="w-[700px] text-center">
                 <h1 className="text-7xl font-black text-wrap leading-[80px]">Page not Found</h1>
-                <h2 className="text-xl font-extrabold leading-[100px]"><a href="/">go to the home page</a></h2>
+                <h2 className="text-xl font-extrabold leading-[100px]"><a href="/">*go to the home page*</a></h2>
             </div>
         </div>
     );

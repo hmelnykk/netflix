@@ -21,9 +21,9 @@ const router = createBrowserRouter([
       <MoreReasonsToJoin />
       <FAQ />
     </Root>,
-    errorElement: <Root>
-      <PageNotFound />
-    </Root>,
+    errorElement: <SecondaryLayout>
+        <PageNotFound />
+      </SecondaryLayout>,
   },
   {
     path: '/sign-up',

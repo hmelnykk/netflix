@@ -1,0 +1,88 @@
+{
+    "films": [
+        {
+            "id": "1",
+            "name": "Cruella",
+            "description": "some text",
+            "category": "movie",
+            "tags": ["16+", "Movie", "Dramas", "2022", "Criminal"],
+            "globalRating": 2,
+            "countryRating": {
+                "ukraine": 1
+            },
+            "poster": "cruella-poster"
+        },
+        {
+            "id": "2",
+            "name": "Dune",
+            "description": "In a future where noble families vie for control over the desert planet Arrakis, a young man must navigate political intrigue and prophetic visions.",
+            "category": "movie",
+            "tags": ["12+", "Movie", "Sci-Fi", "2021", "Adventure"],
+            "globalRating": 8,
+            "countryRating": {
+                "ukraine": 7
+            },
+            "poster": "dune-poster"
+        },
+        {
+            "id": "3",
+            "name": "The Green Knight",
+            "description": "A retelling of the Arthurian legend, where Sir Gawain embarks on a quest to confront the mysterious Green Knight.",
+            "category": "movie",
+            "tags": ["16+", "Movie", "Fantasy", "2021", "Adventure"],
+            "globalRating": 7,
+            "countryRating": {
+                "ukraine": 6
+            },
+            "poster": "gk-poster"
+        },
+        {
+            "id": "4",
+            "name": "No Time to Die",
+            "description": "James Bond returns to face a new villain armed with dangerous technology, while confronting his past.",
+            "category": "movie",
+            "tags": ["12+", "Movie", "Action", "2021", "Thriller"],
+            "globalRating": 6,
+            "countryRating": {
+                "ukraine": 5
+            },
+            "poster": "nttd-poster"
+        },
+        {
+            "id": "5",
+            "name": "The Father",
+            "description": "A heartbreaking drama about a man dealing with dementia and his daughter’s struggle to care for him.",
+            "category": "movie",
+            "tags": ["12+", "Movie", "Drama", "2020", "Emotional"],
+            "globalRating": 9,
+            "countryRating": {
+                "ukraine": 8
+            },
+            "poster": "father3-poster"
+        },
+        {
+            "id": "6",
+            "name": "Shang-Chi and the Legend of the Ten Rings",
+            "description": "Shang-Chi must confront his past and the mysterious Ten Rings organization that seeks him.",
+            "category": "movie",
+            "tags": ["12+", "Movie", "Action", "2021", "Fantasy"],
+            "globalRating": 8,
+            "countryRating": {
+                "ukraine": 7
+            },
+            "poster": "sc-poster"
+        },
+        {
+            "id": "7",
+            "name": "Shang-Chi and the Legend of the Ten Rings",
+            "description": "Shang-Chi must confront his past and the mysterious Ten Rings organization that seeks him.",
+            "category": "movie",
+            "tags": ["12+", "Movie", "Action", "2021", "Fantasy"],
+            "globalRating": 8,
+            "countryRating": {
+                "ukraine": 7
+            },
+            "poster": "sc-poster"
+        }
+    ]
+}

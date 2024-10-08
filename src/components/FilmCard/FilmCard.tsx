@@ -1,5 +1,6 @@
 import { createPortal } from "react-dom";
 import { ModalWindow } from "../ModalWindow";
+import { useState } from "react";
 
 interface FilmTemplate {
     id: string,
@@ -15,6 +16,8 @@ interface FilmTemplate {
 const FilmCard = ( film: {film: FilmTemplate}) => {
     const filmObject: FilmTemplate = film.film;
     const posterId: string = filmObject.poster;
+
+    const [modalOpen, setModalOpen] = useState<boolean>(false);
 
     let posterClass;
 
@@ -40,16 +43,20 @@ const FilmCard = ( film: {film: FilmTemplate}) => {
     }
 
     const ap = document.getElementById('app');
-    const modalWindow = document.getElementById('modal-window');
+    // const modalWindow = document.getElementById('modal-window');
 
     return (
-        <div className={`w-[214px] h-[300px] bg-slate-300 rounded-[6px] transition-all duration-[400ms] hover:scale-105`}>
+        <div className={`min-w-[214px] h-[300px] bg-slate-300 rounded-[6px] transition-all duration-[400ms] hover:scale-105`}>
             <div className={`w-[100%] h-[100%] rounded-[6px] ${posterClass} bg-cover`}
             onClick={(e) => {
-                e.stopPropagation();
-                if (modalWindow) modalWindow.classList.remove('hidden');
+                // e.stopPropagation();
+                // if (modalWindow) modalWindow.classList.remove('hidden');
+                // const modalWindow = ap ? createPortal(<ModalWindow film={filmObject}/>, ap) : <></>
+                // console.log(modalWindow)
+                setModalOpen(true);
+
             }}></div>
-            {ap ? createPortal(<ModalWindow film={film}/>, ap) : <></>}
+            {modalOpen ? createPortal(<ModalWindow film={filmObject} isOpen={modalOpen} onClose={setModalOpen}/>, ap ? ap : document.body) : <></>}
         </div>
     );
 }
