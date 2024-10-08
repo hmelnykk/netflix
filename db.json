@@ -71,18 +71,6 @@
                 "ukraine": 7
             },
             "poster": "sc-poster"
-        },
-        {
-            "id": "7",
-            "name": "Shang-Chi and the Legend of the Ten Rings",
-            "description": "Shang-Chi must confront his past and the mysterious Ten Rings organization that seeks him.",
-            "category": "movie",
-            "tags": ["12+", "Movie", "Action", "2021", "Fantasy"],
-            "globalRating": 8,
-            "countryRating": {
-                "ukraine": 7
-            },
-            "poster": "sc-poster"
         }
     ]
 }
