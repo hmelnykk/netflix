@@ -6,7 +6,7 @@ import { RouterProvider } from 'react-router-dom';
 
 function App() {
   return (
-    <div>
+    <div className='w-[100%]'>
       <div id='app'></div>
       <Provider store={store}>
         <RouterProvider router={router} />

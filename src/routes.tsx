@@ -14,7 +14,7 @@ export const router = createBrowserRouter([
       path: '/',
       element: <Root>
         <TrendingNow />
-          <MoreReasonsToJoin />
+        <MoreReasonsToJoin />
         <FAQ />
       </Root>,
       errorElement: <SecondaryLayout>

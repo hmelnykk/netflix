@@ -14,7 +14,7 @@ const GetStartedForm = () => {
                     setEmail(e.target.value);
                     
                 }}/>
-                <button className="w-[210px] h-[60px] bg-red-600 rounded-[6px] font-extrabold text-2xl"
+                <button className="w-[210px] h-[60px] bg-red-600 rounded-[6px] font-extrabold text-2xl max-md:text-xl"
                 onClick={(e) => {
                     navigate('/sign-up');
                 }}>Get Started</button>

@@ -30,7 +30,7 @@ const FilmCard = ( film: {film: FilmTemplate}) => {
     const ap = document.getElementById('app');
 
     return (
-        <div className={`min-w-[214px] h-[300px] bg-slate-300 rounded-[6px] transition-all duration-[400ms] hover:scale-105`}>
+        <div className={`min-w-[214px] h-[300px] bg-slate-300 rounded-[6px] transition-all duration-[400ms] hover:scale-105 max-md:mb-4`}>
             <div className={`w-[100%] h-[100%] rounded-[6px] ${posterClass} bg-cover`}
             onClick={(e) => setModalOpen(true)}>
                 <div className="w-[100%] h-[100%] rounded-[6px] bg-gradient-to-t from-gray-900 to-black/0 flex items-end p-4 font-bold text-5xl">

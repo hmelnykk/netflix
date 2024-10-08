@@ -10,8 +10,8 @@ interface LayoutProps {
 
 const MainLayout = ({ children } : LayoutProps) => {
     return (
-        <div className="bg-black">
-            <div className="bg-hero bg-cover h-[880px]">
+        <div className="bg-black sm:w-[100%]">
+            <div className="bg-hero bg-cover h-[880px] max-md:h-[530px]">
                 <Header />
                 <Hero />
             </div>

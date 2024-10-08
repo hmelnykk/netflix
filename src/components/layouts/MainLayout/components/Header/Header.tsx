@@ -8,7 +8,7 @@ const Header = ({children} : HeaderProps) => {
                 <div className="logo bg-logo bg-cover w-[148px] h-[40px]">
                     {/* <img className="text-white" src="./netflix-logo.png" alt="logo" /> */}
                 </div>
-                <div className="header__buttons flex justify-around w-[280px]">
+                <div className="header__buttons justify-around w-[280px] hidden md:flex">
                     <LanguageSelect />
                     <button className="p-2 w-[76px] h-[32px] bg-red-500 text-white flex items-center justify-center rounded-[6px] font-bold text-sm">
                         Sign in
