@@ -1,5 +1,6 @@
-import { Field, Form, Formik, useFormik, FormikErrors } from "formik";
+import { Field, Form, Formik } from "formik";
 import * as Yup from 'yup';
+import React from "react";
 
 interface initialValuesType {
     name: string
@@ -11,9 +12,9 @@ const initialValues: initialValuesType = {
     name: '',
     surname: '',
     email: '',
-}
+},
 
-const SignupSchema = Yup.object().shape({
+ SignupSchema = Yup.object().shape({
     name: Yup.string()
         .min(2, 'Too short')
         .max(15, 'Too long')
@@ -25,33 +26,32 @@ const SignupSchema = Yup.object().shape({
     email: Yup.string()
         .email('Invalid email')
         .required('Required'),
-})
+}),
 
-const validate = (values: initialValuesType) => {
-    const errors: FormikErrors<initialValuesType> = {};
-    if (!values.name) {
-      errors.name = 'Required';
-    } else if (values.name.length > 15) {
-      errors.name = 'Must be 15 characters or less';
-    }
+//  validate = (values: initialValuesType) => {
+//     const errors: FormikErrors<initialValuesType> = {};
+//     if (!values.name) {
+//       errors.name = 'Required';
+//     } else if (values.name.length > 15) {
+//       errors.name = 'Must be 15 characters or less';
+//     }
   
-    if (!values.surname) {
-      errors.surname = 'Required';
-    } else if (values.surname.length > 20) {
-      errors.surname = 'Must be 20 characters or less';
-    }
+//     if (!values.surname) {
+//       errors.surname = 'Required';
+//     } else if (values.surname.length > 20) {
+//       errors.surname = 'Must be 20 characters or less';
+//     }
   
-    if (!values.email) {
-      errors.email = 'Required';
-    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-      errors.email = 'Invalid email address';
-    }
+//     if (!values.email) {
+//       errors.email = 'Required';
+//     } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
+//       errors.email = 'Invalid email address';
+//     }
   
-    return errors;
-  };
+//     return errors;
+//   },
 
-const SignUpForm = () => {
-    return (
+ SignUpForm = () => (
         <div className="h-[650px] flex justify-center">
             <div className="w-[600px] flex items-center justify-center">
                 <Formik
@@ -77,7 +77,6 @@ const SignUpForm = () => {
                 </Formik>
             </div>
         </div>
-    );
-}
+    )
 
 export default SignUpForm;

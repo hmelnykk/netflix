@@ -6,7 +6,7 @@ import { FAQ } from './components/FAQ';
 import { SecondaryLayout } from './components/layouts/SecondaryLayout';
 import { PageNotFound } from './components/PageNotFound';
 import { SignUpForm } from './components/SignUpForm';
-import React, { useEffect } from 'react';
+import React from 'react';
 import { TestComponent } from './components/TestComponent';
 import { FilmPage } from './components/FilmPage';
 import { loader as filmLoader } from './components/FilmPage/FilmPage';

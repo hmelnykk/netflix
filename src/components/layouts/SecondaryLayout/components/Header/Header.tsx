@@ -1,11 +1,7 @@
-import { ReactNode } from "react";
 import { useNavigate } from "react-router";
+import React from "react";
 
-interface HeaderProps {
-    children? : ReactNode
-}
-
-const Header = ({children} : HeaderProps) => {
+const Header = () => {
     const navigate = useNavigate();
     return (
         <>

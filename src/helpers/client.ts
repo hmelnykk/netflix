@@ -9,10 +9,10 @@ const getClient = () => {
 
     client = axios.create({
         baseURL: 'http://localhost:1337',
-        // proxy: {
-        //     protocol: 'http',
-        //     host: 'localhost',
-        //     port: 1337,
+        // Proxy: {
+        //     Protocol: 'http',
+        //     Host: 'localhost',
+        //     Port: 1337,
         // }
     });
 

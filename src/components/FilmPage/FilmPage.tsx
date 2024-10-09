@@ -1,16 +1,28 @@
 import { useLoaderData } from "react-router";
 import filmsService from "../../services/films.service";
 import { useMemo } from "react";
+import React from "react";
+import { FilmTemplate } from "../types";
 
-export const loader = async ({ params }: { params: any }) => {
-    return filmsService.getFilms(`/${params.filmId}`)
-        .then(data => data.data)
+interface commentType {
+    comment: string
+    user: string
+    rating: number
 }
 
-const FilmPage = () => {
-    const filmObject: any = useLoaderData();
+type Params<Key extends string = string> = {
+    readonly [key in Key]: string | undefined;
+}
 
-    const posterClass = useMemo(() => {
+export const loader = async ({ params }: { params: Params }) => filmsService.getFilms(`/films/${params.filmId}`)
+        .then(data => {
+            return data;
+        })
+
+const FilmPage = () => {
+    const filmObject = useLoaderData() as FilmTemplate,
+
+     posterClass = useMemo(() => {
         switch (filmObject.poster) {
             case "cruella-poster":
                 return 'bg-cruella-poster';
@@ -34,24 +46,21 @@ const FilmPage = () => {
             <div className="film-info max-w-[50%] leading-10">
                 <h1 className="font-bold text-3xl">{filmObject.name}</h1>
                 {
-                    // stars rating
+                    // Stars rating
                     "x".repeat(Math.floor((filmObject.globalRating + 1) / 2))
                 }
                 <div className='flex gap-2'>
                     {
-                        filmObject.tags.map((el: number) => {
-                            return <>
-                                <div className='border text-gray-500 p-1 text-sm text-center text-white rounded-[6px]'>{el}</div>
-                            </>
-                        })
+                        filmObject.tags.map((el) => <>
+                                <div className='border text-gray-500 p-1 text-sm text-center text-slate-500 rounded-[6px]'>{el}</div>
+                            </>)
                     }
                 </div>
                 <p className="text-gray-600 leading-normal">{filmObject.description}</p>
                 <h1 className="font-bold">Comments</h1>
                 <div className="w-[100%] rounded-[6px] leading-normal p-2">
                     {
-                        filmObject.comments.map((comment: any) => {
-                            return <div className="p-2 border rounded-[6px] shadow-xl">
+                        filmObject.comments.map((comment: commentType) => <div key={""} className="p-2 border rounded-[6px] shadow-xl">
                                 <h1 className="font-semibold">{`${comment.user} - ${comment.rating}/10`}</h1>
                                 <p>{comment.comment}</p>
                                 <hr className="my-2" />
@@ -64,8 +73,7 @@ const FilmPage = () => {
                                     </svg>
 
                                 </div>
-                            </div>
-                        })
+                            </div>)
                     }
                 </div>
             </div>

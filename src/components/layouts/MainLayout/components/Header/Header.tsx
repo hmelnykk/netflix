@@ -1,8 +1,7 @@
-import { HeaderProps } from "../../../../types";
 import { LanguageSelect } from "../LanguageSelect";
+import React from "react";
 
-const Header = ({children} : HeaderProps) => {
-    return (
+const Header = () => (
         <>
             <header className="h-[90px] flex justify-around items-center">
                 <div className="logo bg-logo bg-cover w-[148px] h-[40px]">
@@ -17,7 +16,6 @@ const Header = ({children} : HeaderProps) => {
             </header>
             {/* <img src="" alt="" aria-hidden="true" className="default-ltr-cache-19j6xtr"></img> */}
         </>
-    );
-}
+    )
 
 export default Header;

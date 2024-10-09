@@ -6,14 +6,12 @@ interface LayoutProps {
     children? : ReactNode
 }
 
-const SecondaryLayout = ({ children } : LayoutProps) => {
-    return (
+const SecondaryLayout = ({ children } : LayoutProps) => (
         <>
             <Header />
             { children }
             <Footer />
         </>
     )
-}
 
 export default SecondaryLayout;

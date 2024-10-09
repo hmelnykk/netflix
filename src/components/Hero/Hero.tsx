@@ -1,7 +1,7 @@
 import { GetStartedForm } from "../GetStartedForm";
+import React from "react";
 
-const Hero = () => {
-    return (
+const Hero = () => (
         <div className="text-white h-[800px] flex justify-center items-center max-md:h-[400px]">
             <div className="w-[700px] text-center max-md:w-[350px]">
                 <h1 className="text-7xl font-black text-wrap leading-[80px]
@@ -11,6 +11,5 @@ const Hero = () => {
             </div>
         </div>
     );
-};
 
 export default Hero;

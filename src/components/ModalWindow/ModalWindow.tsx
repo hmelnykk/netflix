@@ -1,13 +1,16 @@
-const ModalWindow = ({ film, onClose, isOpen }: { film: any, onClose: React.Dispatch<React.SetStateAction<boolean>>, isOpen: boolean }) => {
-    const filmObject = film;
-    const filmTags = filmObject.tags;
+import React from "react";
+import { FilmTemplate } from "../types";
 
-    const onCloseHandle = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+const ModalWindow = ({ film, onClose, isOpen }: { film: FilmTemplate, onClose: React.Dispatch<React.SetStateAction<boolean>>, isOpen: boolean }) => {
+    const filmObject = film,
+     filmTags = filmObject.tags,
+
+     onCloseHandle = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         e.stopPropagation();
         onClose(false);
 
-        const modalWindow = document.getElementById('modal-window');
-        const ap = document.getElementById('app');
+        const modalWindow = document.getElementById('modal-window'),
+         ap = document.getElementById('app');
         if (ap && modalWindow && !isOpen) {
             ap.removeChild(modalWindow);
         }
@@ -26,11 +29,9 @@ const ModalWindow = ({ film, onClose, isOpen }: { film: any, onClose: React.Disp
                         <h1 id="modal-title" className='text-4xl font-bold mb-2 text-white'>{filmObject.name}</h1>
                         <div className='flex gap-2'>
                             {
-                                filmTags.map((el: number) => {
-                                    return <>
+                                filmTags.map((el) => <>
                                         <div className='bg-gray-700 hover:bg-gray-600 p-1 text-sm text-center text-white rounded-[6px]'>{el}</div>
-                                    </>
-                                })
+                                    </>)
                             }
                         </div>
                         <p id='modal-description' className='text-gray-400 mb-2'>{filmObject.description}</p>

@@ -8,7 +8,12 @@ export interface FilmTemplate {
     tags: string[],
     globalRating: number,
     countryRating: object[],
-    poster: string
+    poster: string,
+    comments: {
+        comment: string
+        user: string
+        rating: number
+    }[]
 }
 
 export interface HeaderProps {

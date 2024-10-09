@@ -5,12 +5,10 @@ interface Props {
     children?: ReactNode
 }
 
-const Root = ({ children } : Props) => {
-    return (
+const Root = ({ children } : Props) => (
         <MainLayout>
             { children }
         </MainLayout>
-    );
-}
+    )
 
 export default Root;
