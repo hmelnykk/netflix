@@ -10,7 +10,8 @@
             "countryRating": {
                 "ukraine": 1
             },
-            "poster": "cruella-poster"
+            "poster": "cruella-poster",
+            "comments": []
         },
         {
             "id": "2",
@@ -22,7 +23,14 @@
             "countryRating": {
                 "ukraine": 7
             },
-            "poster": "dune-poster"
+            "poster": "dune-poster",
+            "comments": [
+                {
+                    "user": "Wojchiech Grabowski",
+                    "comment": "awesome movie, i have slept through all the movie. hard zero of all possible rating",
+                    "rating": 0
+                }
+            ]
         },
         {
             "id": "3",
@@ -34,7 +42,8 @@
             "countryRating": {
                 "ukraine": 6
             },
-            "poster": "gk-poster"
+            "poster": "gk-poster",
+            "comments": []
         },
         {
             "id": "4",
@@ -46,7 +55,8 @@
             "countryRating": {
                 "ukraine": 5
             },
-            "poster": "nttd-poster"
+            "poster": "nttd-poster",
+            "comments": []
         },
         {
             "id": "5",
@@ -58,7 +68,8 @@
             "countryRating": {
                 "ukraine": 8
             },
-            "poster": "father3-poster"
+            "poster": "father3-poster",
+            "comments": []
         },
         {
             "id": "6",
@@ -70,7 +81,8 @@
             "countryRating": {
                 "ukraine": 7
             },
-            "poster": "sc-poster"
+            "poster": "sc-poster",
+            "comments": []
         }
     ]
 }

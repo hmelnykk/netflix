@@ -6,47 +6,44 @@ import { FAQ } from './components/FAQ';
 import { SecondaryLayout } from './components/layouts/SecondaryLayout';
 import { PageNotFound } from './components/PageNotFound';
 import { SignUpForm } from './components/SignUpForm';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { TestComponent } from './components/TestComponent';
+import { FilmPage } from './components/FilmPage';
+import { loader as filmLoader } from './components/FilmPage/FilmPage';
 
 export const router = createBrowserRouter([
-    {
-      path: '/',
-      element: <Root>
-        <TrendingNow />
-        <MoreReasonsToJoin />
-        <FAQ />
-      </Root>,
-      errorElement: <SecondaryLayout>
-          <PageNotFound />
-        </SecondaryLayout>,
-    },
-    {
-      path: '/sign-up',
-      element: <SecondaryLayout>
-        <SignUpForm />
-      </SecondaryLayout>,
-      errorElement: <Root>
-        <PageNotFound />
-      </Root>,
-    },
-    {
-      path: '/films',
-      element: <Root>
-        text
-      </Root>,
-      errorElement: <Root>
-        <PageNotFound />
-      </Root>,
-      children: [
-        {
-          path: '/films/:filmId',
-          element: <></>,
-        }
-      ]
-    },
-    {
-      path: '/test',
-      element: <TestComponent />
-    },
-  ]);
+  {
+    path: '/',
+    element: <Root>
+      <TrendingNow />
+      <MoreReasonsToJoin />
+      <FAQ />
+    </Root>,
+    errorElement: <SecondaryLayout>
+      <PageNotFound />
+    </SecondaryLayout>,
+  },
+  {
+    path: '/sign-up',
+    element: <SecondaryLayout>
+      <SignUpForm />
+    </SecondaryLayout>,
+    errorElement: <Root>
+      <PageNotFound />
+    </Root>,
+  },
+  {
+    path: '/films/:filmId',
+    loader: filmLoader,
+    element: <SecondaryLayout>
+      <FilmPage />
+    </SecondaryLayout>,
+    errorElement: <SecondaryLayout>
+      <PageNotFound />
+    </SecondaryLayout>,
+  },
+  {
+    path: '/test',
+    element: <TestComponent />
+  },
+]);

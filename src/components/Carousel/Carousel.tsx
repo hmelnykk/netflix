@@ -33,12 +33,3 @@ const Carousel = ({ children, toShow = 4 }: { children: ReactNode[], toShow: num
 }
 
 export default Carousel;
-
-
-{/* <button className="p-4 hover:bg-slate-600/40 transition-all rounded-[6px]" onClick={goBackHandler}>{`<`}</button>
-                    <div className="films flex gap-4 max-md:block">
-                        {children.map((el, idx) => {
-                            return idx >= activeSlide && idx < activeSlide + toShow ? el : null
-                        })}
-                    </div>
-                    <button className="p-4 hover:bg-slate-600/40 transition-all rounded-[6px]" onClick={goNextHandler}>{`>`}</button> */}
